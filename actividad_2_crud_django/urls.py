@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from agenda_contactos import views  
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('agenda', views.agenda),  
+    path('mostrar-contactos',views.mostrarContactos),  
+    path('editar-contacto/<int:id>', views.editarContacto),  
+    path('actualizar-contacto/<int:id>', views.actualizarContacto),  
+    path('eliminar-contacto/<int:id>', views.eliminarContacto),  
 ]
