@@ -1,0 +1,56 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/actualizar-contacto/{{contacto.id}}">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Editar contacto</h3>  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Nombre:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="nombre" id="id_nombre" required maxlength="100" value="{{ contacto.nombre }}" />  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Apellido:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="apellido" id="id_apellido" required maxlength="100" value="{{ contacto.nombre }}" />  
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Telefono:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="telefono" id="id_telefono" required maxlength="15" value="{{ contacto.telefono }}" />  
+    </div>  
+  </div> 
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Email:</label>  
+    <div class="col-sm-4">  
+        <input type="email" name="email" id="id_email" required maxlength="254" value="{{ contacto.email }}" />  
+    </div>  
+  </div>  
+     
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Actualizar</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>

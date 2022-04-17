@@ -1,0 +1,39 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Agenda de contactos</title>  
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>   
+        <th>Nombre</th>  
+        <th>Apellido</th>  
+        <th>Telefono</th>  
+        <th>Correcto Electronico</th>  
+        <th>Acciones</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+        {% for contacto in contactos %}  
+    <tr>  
+        <td>{{ contacto.nombre }}</td>  
+        <td>{{ contacto.apellido }}</td>  
+        <td>{{ contacto.telefono }}</td> 
+        <td>{{ contacto.email }}</td>   
+        <td>  
+            <a href="/editar-contacto/{{ contacto.id }}"><span class="glyphicon glyphicon-pencil" >Editar</span></a>  
+            <a href="/eliminar-contacto/{{ contacto.id }}">Eliminar</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/agenda" class="btn btn-primary">Agregar nuevo contacto</a></center>  
+</body>  
+</html> 
