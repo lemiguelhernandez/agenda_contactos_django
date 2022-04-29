@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from agenda_contactos.models import AgendaContacto  
 from agenda_contactos.forms import AgendaContactoForm  
 

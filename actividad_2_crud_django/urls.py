@@ -20,6 +20,7 @@ from agenda_contactos import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('agenda', views.agenda),  
+    path('',views.mostrarContactos),
     path('mostrar-contactos',views.mostrarContactos),  
     path('editar-contacto/<int:id>', views.editarContacto),  
     path('actualizar-contacto/<int:id>', views.actualizarContacto),  
